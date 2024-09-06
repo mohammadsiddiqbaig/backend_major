@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/form-style.css" rel="stylesheet">
+    
+    <title>Create New User</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Create New user</h1>
+
+
+
+
+        <form action="/users" method="post">
+
+
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+
+
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+
+
+
+            <button type="submit"> Create User</button>
+
+
+        </form>
+
+
+
+
+        <% if(errors){%>
+            <div class="error">
+                <h3>Error(s) : </h3>
+
+
+<ul>
+                <% errors.forEach(error => {%>
+                    <li> <%= error.msg  %></li>
+                <%}) %>
+
+
+                </ul>
+
+
+            </div>
+        <%}%>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User List</title>
+        <link href="/list-style.css" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>User List</h1>
+
+
+
+
+            <a href="/users/new" class="add-user-btn">Add user</a>
+
+
+
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+
+
+
+
+               
+                <% users.forEach(user => {%>
+                    <tr>
+                        <td> <%= user.name %></td>
+                        <td> <%=  user.age %></td>
+                        <td> <%= user.email %></td>
+
+
+
+
+
+
+                        <td class="actions">
+                            <a href="/users/<%= user._id %>/edit">Edit</a>
+
+
+
+
+                            <form action="/users/<%= user._id %>?_method=DELETE" method="post">
+
+
+                            <button type="submit" class="delete-btn">DELETE</button>
+
+
+                            </form>
+
+
+
+
+                        </td>
+                    </tr>
+                <%})  %>
+
+
+            </table>
+
+
+        </div>
+
+
+    </body>
+</html>
